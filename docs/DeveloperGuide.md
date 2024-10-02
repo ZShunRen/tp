@@ -304,7 +304,8 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 
 ### Use cases
 
-(For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
+(For all use cases below, the **System** is the `AgentAssist` and the **Actor** is the `user`, unless specified 
+otherwise)
 
 **Use case: Delete a person**
 
