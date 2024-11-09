@@ -53,12 +53,23 @@ public class EditCommand extends Command {
             + "Example Usage: '" + COMMAND_WORD + " 1 "
             + PREFIX_PHONE + "91234567 "
             + PREFIX_EMAIL + "johndoe@example.com'";
-
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the client identified "
+    public static final String MESSAGE_USAGE_WITHOUT_RA_RN_RESTRICTION = COMMAND_WORD
+            + ": Edits the details of the client identified "
             + "by the index number used in the displayed client list. "
             + "Existing values will be overwritten by the input values. Any fields unspecified will not be modified.\n"
             + "Required Parameters: INDEX (must be a positive integer)\n"
             + MESSAGE_USAGE_OPTIONAL_PARAMETERS;
+    public static final String MESSAGE_ERROR_PART_FOR_RA_RN = "Only one of these flags may be used at a time: "
+            + String.format("'%s' or '%s'.\nPlease ensure that only one of the aforementioned flags is specified.",
+            PREFIX_NEW_REMARK, PREFIX_APPEND_REMARK);
+
+    public static final String MESSAGE_VIOLATION_OF_RA_RN_CONSTRAINT = "You have used both of the following "
+            + "flags together: " + String.format("'%s' and '%s', as mentioned in our user guide, "
+            + "you cannot use both of them at the same time.", PREFIX_NEW_REMARK, PREFIX_APPEND_REMARK);
+
+    public static final String MESSAGE_USAGE = MESSAGE_USAGE_WITHOUT_RA_RN_RESTRICTION + "\n"
+            + MESSAGE_ERROR_PART_FOR_RA_RN;
+
 
     public static final String MESSAGE_EDIT_CLIENT_SUCCESS = "Edited Client: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";

@@ -51,7 +51,8 @@ public class EditCommandParser implements Parser<EditCommand> {
         if (ArgumentMultimap.isBothRemarkNewAndRemarkAppendPresent(argMultimap, PREFIX_NEW_REMARK,
                 PREFIX_APPEND_REMARK)) {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT,
-                    Messages.MESSAGE_CONCURRENT_RN_RA_FIELDS + EditCommand.MESSAGE_USAGE));
+                    EditCommand.MESSAGE_VIOLATION_OF_RA_RN_CONSTRAINT + "\n"
+                            + EditCommand.MESSAGE_USAGE_WITHOUT_RA_RN_RESTRICTION));
         }
 
         argMultimap.verifyNoDuplicatePrefixesFor(PREFIX_NAME, PREFIX_PHONE, PREFIX_EMAIL, PREFIX_ADDRESS,

@@ -21,9 +21,6 @@ public class Messages {
     public static final String MESSAGE_DUPLICATE_FIELDS =
                 "Multiple values specified for the following single-valued field(s): ";
 
-    public static final String MESSAGE_CONCURRENT_RN_RA_FIELDS = "Both remark new and remark append fields are "
-            + "specified, please only use one.";
-
     public static final String MESSAGE_COMMAND_CANCELLED = "Command has been cancelled.";
 
     /**
