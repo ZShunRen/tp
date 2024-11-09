@@ -278,7 +278,8 @@ public class EditCommandParserTest {
         String userInput = targetIndex.getOneBased() + APPEND_REMARK_DESC_BOB + NEW_REMARK_DESC_BOB;
         assertParseFailure(parser, userInput,
                 String.format(MESSAGE_INVALID_COMMAND_FORMAT,
-                        Messages.MESSAGE_CONCURRENT_RN_RA_FIELDS + EditCommand.MESSAGE_USAGE));
+                        EditCommand.MESSAGE_VIOLATION_OF_RA_RN_CONSTRAINT + "\n"
+                                + EditCommand.MESSAGE_USAGE_WITHOUT_RA_RN_RESTRICTION));
 
     }
 
